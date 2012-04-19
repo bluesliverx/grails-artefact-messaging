@@ -40,12 +40,6 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
-        // runtime 'mysql:mysql-connector-java:5.1.13'
-        compile("org.tmatesoft.svnkit:svnkit:1.3.5") {
-            excludes "jna", "trilead-ssh2", "sqljet"
-			export = false
-        }
     }
 	plugins {
 		test(':codenarc:0.16.1') {
@@ -56,11 +50,6 @@ grails.project.dependency.resolution = {
 		}
 		build(':release:2.0.0') {
 			export = false
-			excludes "svn"
-		}
-		build(':svn:1.0.2') {
-			export = false
-			excludes 'svnkit'
 		}
 	}
 }
