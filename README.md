@@ -3,10 +3,10 @@ arbitrarily defined grails artefacts.  The artefacts may be configured in Config
 
 By default, the `message` function is injected into services, but may be configured for additional artefacts as well.
 
-h2. The `message` Method
+### The `message` Method
 
-The `message` method may be used exactly as the controller or tag lib `message` method as described in the 
-[Grails documentation|http://grails.org/doc/latest/ref/Tags/message.html].
+The `message` method may be used exactly as the controller or tag lib `message` method as described in 
+http://grails.org/doc/latest/ref/Tags/message.html.
 
 ```groovy
 def message = message(code:"default.not.found.message", default:"Not found", args:[
@@ -15,7 +15,7 @@ def message = message(code:"default.not.found.message", default:"Not found", arg
 	])
 ```
 
-h2. Configuring Additional Artefacts
+### Configuring Additional Artefacts
 
 Configuring additional artefacts is simple, just add another entry to the `grails.plugins.artefactmessaging.artefacts`
 list in `Config.groovy`.
@@ -32,9 +32,10 @@ would attempt to retrieve all the quartz task artefacts by using `grailsApplicat
 messaging plugin automatically will observe all changes to files watched by the plugin configured by the
 `plugin` property.  This property may also be null is reloading is not desired.
 
-h2. Default Configuration
+### Default Configuration
 
 The default configuration is as follows:
+
 ```groovy
 grails.plugins.artefactmessaging {
 	artefacts = [
