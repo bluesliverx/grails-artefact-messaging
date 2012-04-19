@@ -48,3 +48,12 @@ grails.plugins.artefactmessaging {
 ```
 
 This means that all grails services are automatically injected with the `message` function.
+
+### Release Notes
+
+Special thank you to Paul Fernley for his implementation of grabbing a localized message by the current
+request bound to the thread (see ArtefactMessagingService).
+
+#### 0.2
+
+* Initial release
