@@ -32,7 +32,7 @@ Please note: No warranty is implied or given with this plugin.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/artefact-messaging"
+    def documentation = "http://github.com/adaptivecomputing/grails-artefact-messaging"
 	
 	def observe = []
 	def loadAfter = []
