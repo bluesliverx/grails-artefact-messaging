@@ -15,36 +15,31 @@ def message = message(code:"default.not.found.message", default:"Not found", arg
 	])
 ```
 
-### Configuring Additional Artefacts
+### Modifying Affected Artefacts
 
-Configuring additional artefacts is simple, just add another entry to the `grails.plugins.artefactmessaging.artefacts`
-list in `Config.groovy`.
+In order to modify the artefacts that are affected by the plugin, simple add the following lines to your `Config.groovy`
+file and add/remove entries as needed:
 
 ```groovy
-grails.plugins.artefactmessaging.artefacts << [
-	name:'task',
-	plugin:'quartz'
+grails.plugins.artefactmessaging.artefacts = [
+	[name:'service', plugin:'services'],
+	[name:'task', plugin:'quartz'],
 ]
 ```
 
-The `name` property is used to retrieve the classes from the Grails application.  For example, the entry above
-would attempt to retrieve all the quartz task artefacts by using `grailsApplication.taskClasses`.  The artefact 
-messaging plugin automatically will observe all changes to files watched by the plugin configured by the
-`plugin` property.  This property may also be null is reloading is not desired.
+The `name` property is used to retrieve the classes from the Grails application.  For example, the second entry 
+above would attempt to retrieve all the quartz task artefacts by using `grailsApplication.taskClasses`.  The 
+artefact  messaging plugin automatically will observe all changes to files watched by the plugin configured 
+by the `plugin` property.  This property may also be null if reloading is not desired.
 
 ### Default Configuration
 
 The default configuration is as follows:
 
 ```groovy
-grails.plugins.artefactmessaging {
-	artefacts = [
-		[
-			name:"service",
-			plugin:"services",
-		],
-	]
-}
+grails.plugins.artefactmessaging.artefacts = [
+	[name:'service', plugin:'services'],
+]
 ```
 
 This means that all grails services are automatically injected with the `message` function.
