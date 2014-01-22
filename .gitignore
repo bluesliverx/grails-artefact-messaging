@@ -12,3 +12,8 @@ target
 target-eclipse
 *.zip
 *.xml
+/.idea
+/*.ipr
+/*.iml
+/*.iws
+
