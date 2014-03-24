@@ -31,7 +31,7 @@ grails.project.dependency.resolution = {
     dependencies {
     }
     plugins {
-        test(':codenarc:0.19', ':code-coverage:1.2.7') {
+        test(/*TODO Add back in: ':codenarc:0.20', */':code-coverage:1.2.7') {
             export = false
         }
         build(':release:2.2.1', ':rest-client-builder:1.0.3') {
