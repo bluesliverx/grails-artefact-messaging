@@ -1,23 +1,22 @@
 package grails.plugins.artefactmessaging
-
 import grails.util.GrailsWebUtil
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import org.codehaus.groovy.grails.web.context.ServletContextHolder
+import org.springframework.context.MessageSource
 import org.springframework.web.context.request.RequestContextHolder
 import org.springframework.web.context.support.WebApplicationContextUtils
 import org.springframework.web.servlet.support.RequestContextUtils
-
 /**
  * Most of the code is from the localizations plugin's
  * Localization domain class, but has been modified to support
  * message(error:...).
  * @author Paul Fernley
  * @author bsaville
+ * @author Søren Berg Glasius
  */
 class ArtefactMessagingService {
 	static transactional = false
 	
-	def messageSource
+	MessageSource messageSource
 
 	String getMessage(Map parameters) {
 		def requestAttributes = RequestContextHolder.getRequestAttributes()
@@ -43,8 +42,8 @@ class ArtefactMessagingService {
 		}
 
 		def msg
-		if (parameters.error)
-			msg = messageSource.getMessage(parameters.error, locale)
+		if (parameters.error || parameters.message)
+			msg = messageSource.getMessage(parameters.error ?: parameters.message, locale)
 		else
 			msg = messageSource.getMessage(parameters.code, parameters.args as Object[], parameters.default, locale)
 
