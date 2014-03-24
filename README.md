@@ -49,6 +49,10 @@ This means that all grails services are automatically injected with the `message
 Special thank you to Paul Fernley for his implementation of grabbing a localized message by the current
 request bound to the thread (see ArtefactMessagingService).
 
+#### 1.0
+* Fix #2 Released as 1.0
+* Fix #3 Now supports message: argument like the regular message code does in Grails
+
 #### 0.3
 
 * Fix #1 - default configuration was not working properly
